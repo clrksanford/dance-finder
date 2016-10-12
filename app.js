@@ -1,3 +1,8 @@
+require('dotenv').config({silent: true});
+
+var mongoose = require('mongoose');
+mongoose.connect(process.env.DB_CONNECTION);
+
 const cheerio = require('cheerio');
 const axios = require('axios');
 
