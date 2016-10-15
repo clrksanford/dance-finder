@@ -8,12 +8,13 @@ var Upcoming = require('./models/upcoming');
 const cheerio = require('cheerio');
 const axios = require('axios');
 
-axios.get('http://www.contradancelinks.com/schedule_AL.html')
+// BUILD LIST OF STATES FROM GITHUB USER mshafrir
+axios.get('https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json')
   .then(function(response) {
-    var goodString = response.data.replace("<BR><BR>\n<DD>", "<BR><BR></DD>\n<DD>");
-    let $ = cheerio.load(goodString, {
-      ignoreWhitespace: true,
-      lowerCaseTags: true
+    var stateArray = [];
+    response.data.forEach(function(item) {
+      stateArray.push(item.abbreviation);
+      return stateArray;
     });
 
     $('dd').each(function(i,dd) {
