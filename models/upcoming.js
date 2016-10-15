@@ -4,7 +4,8 @@ var upcomingSchema = {
   series: String,
   callers: String,
   date: Date,
-  location: String
+  location: String,
+  state: String
 }
 
 var upcomingDance = mongoose.model('UpcomingDance', upcomingSchema);
