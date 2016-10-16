@@ -4,10 +4,13 @@ var mongoose = require('mongoose');
 var _ = require('lodash');
 var Upcoming = require('../models/upcoming');
 
-
 /* GET home page. */
 router.get('/', function (req, res) {
   res.render('index');
+});
+
+router.get('/results', function (req, res, next) {
+  res.render('results');
 });
 
 router.get('/:state', function(req, res, next) {
