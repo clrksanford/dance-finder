@@ -6,8 +6,12 @@ var Upcoming = require('../models/upcoming');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  Upcoming.findById('58029f046b6e6f1933e8da7c', function (err, dance) {
+router.get('/', function (req, res) {
+  res.render('index');
+});
+
+router.get('/:id', function(req, res, next) {
+  Upcoming.findById(req.params.id, function (err, dance) {
     if (err) {
       console.log('error');
       res.status(500).send();
@@ -15,7 +19,6 @@ router.get('/', function(req, res, next) {
       console.log('no song found');
       res.status(404).send();
     } else {
-      console.log(dance);
       res.json(dance);
     }
   });
