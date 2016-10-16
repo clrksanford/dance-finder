@@ -10,8 +10,8 @@ router.get('/', function (req, res) {
   res.render('index');
 });
 
-router.get('/:id', function(req, res, next) {
-  Upcoming.findById(req.params.id, function (err, dances) {
+router.get('/:state', function(req, res, next) {
+  Upcoming.find({state: req.params.state}, function (err, dances) {
     if (err) {
       console.log('error');
       res.status(500).send();
