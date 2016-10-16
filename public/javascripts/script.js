@@ -2,7 +2,7 @@ $(document).ready(function () {
   $('#find').on('click', function (e) {
     e.preventDefault();
     var itemClicked = $(e.currentTarget);
-    var userInput = $('#search').val();
+    var userInput = $('#search option:selected').val();
 
     ajaxCall(userInput);
     $('#search').val('');
