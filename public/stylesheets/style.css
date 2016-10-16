@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+h2 {
+  visibility: hidden;
+}
+
+li {
+  list-style-type: none;
+}
