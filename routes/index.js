@@ -10,16 +10,16 @@ router.get('/', function (req, res) {
   res.render('index');
 });
 
-router.get('/:id', function(req, res, next) {
-  Upcoming.findById(req.params.id, function (err, dance) {
+router.get('/:series', function(req, res, next) {
+  Upcoming.find({series: req.params.series}, function (err, dances) {
     if (err) {
       console.log('error');
       res.status(500).send();
-    } else if (!dance) {
+    } else if (!dances) {
       console.log('no song found');
       res.status(404).send();
     } else {
-      res.json(dance);
+      res.json(dances);
     }
   });
 });
