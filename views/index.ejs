@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>Dance Finder</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
@@ -11,7 +15,7 @@
     <nav>
       <h1>Where do you want to dance?</h1>
       <form>
-        <select id="search">
+        <select class="selectpicker" id="search">
           <option value="default">Choose your state</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
@@ -77,6 +81,8 @@
     </ul>
 
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="/javascripts/bootstrap.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
     <script src="/javascripts/script.js" charset="utf-8"></script>
   </body>
 </html>
