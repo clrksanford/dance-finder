@@ -1,75 +1,66 @@
 require('dotenv').config({silent: true});
-
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+
 mongoose.connect(process.env.DB_CONNECTION);
 
-var Upcoming = require('./models/upcoming');
+var routes = require('./routes/index');
+var results = require('./routes/results');
+var users = require('./routes/users');
 
-const cheerio = require('cheerio');
-const axios = require('axios');
+var app = express();
 
-// BUILD LIST OF STATES FROM GITHUB USER mshafrir
-axios.get('https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json')
-  .then(function(response) {
-    var stateArray = [];
-    response.data.forEach(function(item) {
-      stateArray.push(item.abbreviation);
-      return stateArray;
-    });
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-    var linksArray = [];
-    stateArray.forEach(function(item) {
-      var link = 'http://www.contradancelinks.com/schedule_' + item + '.html';
-      linksArray.push(link);
-    });
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-    linksArray.forEach(function(item) {
-      axiosCall(item);
+app.use('/', routes);
+app.use('/results', results);
+app.use('/users', users);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
     });
   });
-
-// BUILD DANCE ITEMS FOR UPCOMING DANCES ON ONE STATE PAGE
-function axiosCall(item) {
-
-  axios.get(item)
-    .then(function(response) {
-      var goodString = response.data.replace("<BR><BR>\n<DD>", "<BR><BR></DD>\n<DD>");
-
-      let $ = cheerio.load(goodString, {
-        ignoreWhitespace: true,
-        lowerCaseTags: true
-      });
-
-      $('dd').each(function(i,dd) {
-        var text = $(this).text();
-        var [startDate, rest] = text.split(' Dance Series: ');
-        startDate = new Date(startDate);
-
-        var [danceSeries, rest] = rest.split(' Location: ');
-        var [location, rest] = rest.split(' Caller(s): ');
-        var [callers, rest] = rest.split(' Band(s)/Musician(s): ');
-        var [bands, rest] = rest.split(' Note: ');
-
-        var [start,end] = item.split('/schedule_');
-        var state = end.split('.')[0];
-
-        var upcomingDanceEntry = new Upcoming({
-          series: danceSeries,
-          callers: callers,
-          date: startDate,
-          location: location,
-          state: state
-        });
-
-        console.log(upcomingDanceEntry);
-
-        // upcomingDanceEntry.save(function(err) {
-        //   if(err) {
-        //     console.log(err);
-        //   } else {
-        //     console.log('Success!', upcomingDanceEntry);
-        //   }
-        // });
-      });
-    });
 }
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
+
+
+module.exports = app;
