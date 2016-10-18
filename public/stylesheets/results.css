@@ -79,9 +79,12 @@ body:after {
 	height: 100%;
 }
 
+/*----------------------------------*/
+/*----------HEADER STYLES-----------*/
+/*----------------------------------*/
+
 header {
   padding: 20px;
-	position: absolute;
 	width: 100%;
 	background-color: rgba(0,0,0,0.5);
 }
@@ -93,8 +96,24 @@ h3 {
 	z-index: 2;
 }
 
+h3#title {
+	display: inline-block;
+	float: left;
+}
+
 nav {
+	display: inline-block;
+	float: right;
   text-align: center;
+}
+
+nav h3#search-header {
+	display: inline-block;
+}
+
+nav form {
+	display: inline-block;
+	float: right;
 }
 
 button {
@@ -110,9 +129,46 @@ button:hover {
 	background-color: rgb(255, 214, 51);
 }
 
+/*----------------------------------*/
+/*-----------MAIN STYLES------------*/
+/*----------------------------------*/
+
+main {
+	margin: 50px auto;
+	width: 90%;
+	min-height: 500px;
+}
+
+.column {
+	display: inline-block;
+	width: 48%;
+	height: 500px;
+	background-color: rgba(0,0,0,0.8);
+	text-align: center;
+	padding: 40px 20px;
+	line-height: 1.25;
+}
+
+.column h2 {
+	color: white;
+	margin-bottom: 20px;
+}
+
+.list.column {
+	float: left;
+}
+
 li {
   list-style-type: none;
 }
+
+.map.column {
+	float: right;
+}
+
+/*----------------------------------*/
+/*----------FOOTER STYLES-----------*/
+/*----------------------------------*/
 
 footer {
 	position: absolute;

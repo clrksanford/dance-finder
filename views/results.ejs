@@ -2,17 +2,23 @@
 <html>
   <head>
     <title>Dance Finder</title>
+
+    <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Lalezar|Lobster" rel="stylesheet">
+
+    <!-- Bootstrap packet for dropdown styles -->
     <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+
+    <!-- Custom stylesheet -->
     <link rel='stylesheet' href='/stylesheets/results.css' />
   </head>
   <body>
     <header>
-      <h3>Contra Dance Finder</h3>
+      <h3 id="title">Contra Dance Finder</h3>
       <nav>
-        <h3>Find another dance:</h3>
+        <h3 id="search-header">Find another dance:</h3>
         <form>
           <select class="selectpicker" id="search">
             <option value="default">Choose your state</option>
@@ -72,13 +78,23 @@
       </nav>
     </header>
 
-    <h2>Upcoming Dances in <span class="state">STATE</span></h2>
-    <ul id="upcoming">
-    </ul>
+    <main class="container" id="results">
+      <div class="row">
+        <div class="list column">
+          <h2>Upcoming Dances in <span class="state">STATE</span></h2>
+          <ul id="upcoming">
+          </ul>
 
-    <h2>Recurring Dance Series in <span class="state">STATE</span></h2>
-    <ul id="recurring">
-    </ul>
+          <h2>Recurring Dance Series in <span class="state">STATE</span></h2>
+          <ul id="recurring">
+          </ul>
+        </div>
+        <div class="map column">
+
+        </div>
+      </div>
+
+    </main>
 
     <footer>
       <p>&copy; 2016 Clark Sanford</p>
