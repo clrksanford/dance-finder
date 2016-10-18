@@ -5,8 +5,9 @@ $(document).ready(function () {
     var itemClicked = $(e.currentTarget);
     var userInput = $('#search option:selected').val();
 
-    ajaxCall(userInput);
-    $('#search').val('');
+    window.location.href = '/results';
+    // ajaxCall(userInput);
+    // $('#search').val('');
   });
 });
 

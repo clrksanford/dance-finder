@@ -61,7 +61,7 @@ html {
 body {
 	font-family: Arial, sans-serif;
 	height: 100%;
-	background: url('/images/contra.jpg');
+	background: url('../images/contra.jpg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -79,17 +79,11 @@ body:after {
 	height: 100%;
 }
 
-/*----------------------------------*/
-/*----------HEADER STYLES-----------*/
-/*----------------------------------*/
-
 header {
-	position: absolute;
-	top: 0;
-	background-color: rgba(0,0,0,0.5);
   padding: 20px;
+	position: absolute;
 	width: 100%;
-
+	background-color: rgba(0,0,0,0.5);
 }
 
 h3 {
@@ -99,36 +93,32 @@ h3 {
 	z-index: 2;
 }
 
-h3#title {
-	display: inline-block;
-	float: left;
-	margin-top: 6px;
-}
-
 nav {
-	display: inline-block;
-	float: right;
+  padding: 200px 0 100px 0;
   text-align: center;
+	position: relative;
 }
 
-nav h3#search-header {
-	display: inline-block;
-	margin-top: 6px;
-	margin-right: 20px;
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 100px;
+  font-style: italic;
+	color: #ffd633;
 }
 
-nav form {
-	display: inline-block;
-	float: right;
+form {
+	margin: 50px auto;
+}
+
+select#search {
+	opacity: 0.5;
 }
 
 button {
-	display: inline-block;
 	background-color: rgb(0,0,0);
 	color: white;
 	border: none;
 	border-radius: 5px;
-	margin-left: 20px;
 	padding: 9px 15px;
 	cursor: pointer;
 }
@@ -137,49 +127,13 @@ button:hover {
 	background-color: rgb(255, 214, 51);
 }
 
-/*----------------------------------*/
-/*-----------MAIN STYLES------------*/
-/*----------------------------------*/
-
-main {
-	margin: 10% auto;
-	width: 90%;
-	min-height: 500px;
-}
-
-.column {
-	display: inline-block;
-	width: 48%;
-	height: 500px;
-	background-color: rgba(0,0,0,0.8);
-	text-align: center;
-	padding: 40px 20px;
-	line-height: 1.25;
-}
-
-.column h2 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 28px;
-	font-style: italic;
-	color: white;
-	margin-bottom: 20px;
-}
-
-.list.column {
-	float: left;
+h2 {
+  visibility: hidden;
 }
 
 li {
   list-style-type: none;
 }
-
-.map.column {
-	float: right;
-}
-
-/*----------------------------------*/
-/*----------FOOTER STYLES-----------*/
-/*----------------------------------*/
 
 footer {
 	position: absolute;
