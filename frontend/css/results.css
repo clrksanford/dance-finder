@@ -103,6 +103,7 @@ h3#title {
 	display: inline-block;
 	float: left;
 	margin-top: 6px;
+	cursor: pointer;
 }
 
 nav {

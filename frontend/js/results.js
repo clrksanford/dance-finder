@@ -1,3 +1,7 @@
 $(document).ready(function () {
-  alert('hey');
+  $('h3#title').on('click', showIndex);
 });
+
+function showIndex() {
+
+}

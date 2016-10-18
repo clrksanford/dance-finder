@@ -5,9 +5,11 @@ $(document).ready(function () {
     var itemClicked = $(e.currentTarget);
     var userInput = $('#search option:selected').val();
 
+    showResults();
     // ajaxCall(userInput);
     // $('#search').val('');
   });
+  $('h3#title').on('click', showIndex);
 });
 
 function ajaxCall(query) {
@@ -65,4 +67,16 @@ function changeBackground() {
   setInterval(nextBackground, 5000);
 
   header.css('background-image', backgrounds[0]);
+}
+
+function showResults() {
+  $('h1').hide();
+  $('main.container').removeClass('hidden');
+  $('link[href="css/style.css"]').attr('href', 'css/results.css');
+}
+
+function showIndex() {
+  $('h1').show();
+  $('main.container').addClass('hidden');
+  $('link[href="css/results.css"]').attr('href', 'css/style.css');
 }
