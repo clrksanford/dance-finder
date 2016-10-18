@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  changeBackground();
   $('#find').on('click', function (e) {
     e.preventDefault();
     var itemClicked = $(e.currentTarget);
@@ -42,4 +43,26 @@ function ajaxCall(query) {
         resultsList.append(newLi);
       }
     });
+}
+
+function changeBackground() {
+  var header = $('body');
+
+  var backgrounds = [
+    'url(images/contra.jpg)',
+    'url(images/contra-2.jpg)',
+    'url(images/contra-3.jpg)'
+  ];
+
+  var current = 0;
+
+  function nextBackground() {
+    current++;
+    current = current % backgrounds.length;
+    header.css('background-image', backgrounds[current]);
+  }
+
+  setInterval(nextBackground, 5000);
+
+  header.css('background-image', backgrounds[0]);
 }
