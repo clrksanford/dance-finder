@@ -5,7 +5,6 @@ $(document).ready(function () {
     var itemClicked = $(e.currentTarget);
     var userInput = $('#search option:selected').val();
 
-    window.location.href = '/results';
     // ajaxCall(userInput);
     // $('#search').val('');
   });
