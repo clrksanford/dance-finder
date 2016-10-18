@@ -84,9 +84,12 @@ body:after {
 /*----------------------------------*/
 
 header {
+	position: absolute;
+	top: 0;
+	background-color: rgba(0,0,0,0.5);
   padding: 20px;
 	width: 100%;
-	background-color: rgba(0,0,0,0.5);
+
 }
 
 h3 {
@@ -99,6 +102,7 @@ h3 {
 h3#title {
 	display: inline-block;
 	float: left;
+	margin-top: 6px;
 }
 
 nav {
@@ -109,6 +113,8 @@ nav {
 
 nav h3#search-header {
 	display: inline-block;
+	margin-top: 6px;
+	margin-right: 20px;
 }
 
 nav form {
@@ -117,10 +123,12 @@ nav form {
 }
 
 button {
+	display: inline-block;
 	background-color: rgb(0,0,0);
 	color: white;
 	border: none;
 	border-radius: 5px;
+	margin-left: 20px;
 	padding: 9px 15px;
 	cursor: pointer;
 }
@@ -134,7 +142,7 @@ button:hover {
 /*----------------------------------*/
 
 main {
-	margin: 50px auto;
+	margin: 10% auto;
 	width: 90%;
 	min-height: 500px;
 }
@@ -150,6 +158,9 @@ main {
 }
 
 .column h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 28px;
+	font-style: italic;
 	color: white;
 	margin-bottom: 20px;
 }
