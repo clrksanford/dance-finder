@@ -28,7 +28,7 @@ function ajaxCall(query) {
       $('ul').empty();
 
 
-      for(var i=0; i < 10; i++) {
+      for(var i=0; i < 5; i++) {
         var item = response[i];
         var series = item.series;
         var caller = item.callers;
@@ -38,13 +38,12 @@ function ajaxCall(query) {
 
         var resultsList = $('#upcoming');
         var newLi = $('<li></li>');
-        var h3 = $('<h6 />').text(series);
-        var p1 = $('<p />').text(date);
-        var p2 = $('<p />').text(caller);
-        var p3 = $('<p />').text(location);
-        var p4 = $('<p />').text(state);
+        var h6 = $('<h6 />').text("Series: " + series);
+        var p1 = $('<p />').text("Date: " + date);
+        var p2 = $('<p />').text("Caller: " + caller);
+        var p3 = $('<p />').text("Location: " + location + ", " + state);
 
-        newLi.append(h3, p1, p2, p3, p4);
+        newLi.append(h6, p1, p2, p3);
         resultsList.append(newLi);
       }
     });
