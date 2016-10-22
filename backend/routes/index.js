@@ -9,8 +9,4 @@ router.get('/', function (req, res) {
   res.render('index');
 });
 
-router.get('/results', function (req, res, next) {
-  res.render('results');
-});
-
 module.exports = router;

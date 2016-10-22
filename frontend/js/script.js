@@ -6,19 +6,22 @@ $(document).ready(function () {
     var userInput = $('#search option:selected').val();
 
     showResults();
-    // ajaxCall(userInput);
-    // $('#search').val('');
+    ajaxCall(userInput);
+    $('#search').val('');
   });
   $('h3#title').on('click', showIndex);
 });
 
 function ajaxCall(query) {
 
+  console.log('In the Ajax call');
+
   $.ajax({
-    url: "/" + query
+    url: "http://localhost:3000/results/" + query
   })
     .done(function (response) {
 
+      console.log('Ajax response', response);
       // If h2's are invisible, show them
       $('h2').css('visibility', 'visible');
       $('.state').text(response[0].state);
