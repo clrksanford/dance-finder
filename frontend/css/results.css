@@ -152,6 +152,7 @@ main {
 	display: inline-block;
 	width: 48%;
 	height: 500px;
+	overflow: scroll;
 	background-color: rgba(0,0,0,0.8);
 	text-align: center;
 	padding: 40px 20px;
