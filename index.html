@@ -2,17 +2,20 @@
 <html>
   <head>
     <title>Dance Finder</title>
-    <link href="https://fonts.googleapis.com/css?family=Anton|Lalezar|Lobster" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Lalezar|Lobster|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
-    <link rel='stylesheet' href='/stylesheets/results.css' />
+    <link rel='stylesheet' href='css/style.css' />
   </head>
   <body>
     <header>
-      <h3>Contra Dance Finder</h3>
+      <div class="title">
+        <h3 id="title">Contra Dance Finder</h3>
+      </div>
       <nav>
-        <h3>Find another dance:</h3>
+        <h1>Where do you want to dance?</h1>
+        <h3 id="search-header">Find another dance:</h3>
         <form>
           <select class="selectpicker" id="search">
             <option value="default">Choose your state</option>
@@ -72,21 +75,30 @@
       </nav>
     </header>
 
-    <h2>Upcoming Dances in <span class="state">STATE</span></h2>
-    <ul id="upcoming">
-    </ul>
+    <main class="container hidden" id="results">
+      <div class="row">
+        <div class="list column">
+          <h2>Upcoming Dances in <span class="state">STATE</span></h2>
+          <ul id="upcoming">
+          </ul>
 
-    <h2>Recurring Dance Series in <span class="state">STATE</span></h2>
-    <ul id="recurring">
-    </ul>
+          <h2>Recurring Dance Series in <span class="state">STATE</span></h2>
+          <ul id="recurring">
+          </ul>
+        </div>
+        <div class="map column">
+
+        </div>
+      </div>
+    </main>
 
     <footer>
       <p>&copy; 2016 Clark Sanford</p>
     </footer>
 
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="/javascripts/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
-    <!-- <script src="/javascripts/script.js" charset="utf-8"></script> -->
+    <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>

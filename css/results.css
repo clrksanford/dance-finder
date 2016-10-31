@@ -61,7 +61,7 @@ html {
 body {
 	font-family: Arial, sans-serif;
 	height: 100%;
-	background: url('/images/contra.jpg');
+	background: url('../images/contra.jpg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -79,11 +79,17 @@ body:after {
 	height: 100%;
 }
 
+/*----------------------------------*/
+/*----------HEADER STYLES-----------*/
+/*----------------------------------*/
+
 header {
-  padding: 20px;
 	position: absolute;
-	width: 100%;
+	top: 0;
 	background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+	width: 100%;
+
 }
 
 h3 {
@@ -93,15 +99,37 @@ h3 {
 	z-index: 2;
 }
 
+h3#title {
+	display: inline-block;
+	float: left;
+	margin-top: 6px;
+	cursor: pointer;
+}
+
 nav {
+	display: inline-block;
+	float: right;
   text-align: center;
 }
 
+nav h3#search-header {
+	display: inline-block;
+	margin-top: 6px;
+	margin-right: 20px;
+}
+
+nav form {
+	display: inline-block;
+	float: right;
+}
+
 button {
+	display: inline-block;
 	background-color: rgb(0,0,0);
 	color: white;
 	border: none;
 	border-radius: 5px;
+	margin-left: 20px;
 	padding: 9px 15px;
 	cursor: pointer;
 }
@@ -110,9 +138,50 @@ button:hover {
 	background-color: rgb(255, 214, 51);
 }
 
+/*----------------------------------*/
+/*-----------MAIN STYLES------------*/
+/*----------------------------------*/
+
+main {
+	margin: 10% auto;
+	width: 90%;
+	min-height: 500px;
+}
+
+.column {
+	display: inline-block;
+	width: 48%;
+	height: 500px;
+	overflow: scroll;
+	background-color: rgba(0,0,0,0.8);
+	text-align: center;
+	padding: 40px 20px;
+	line-height: 1.25;
+}
+
+.column h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 28px;
+	font-style: italic;
+	color: white;
+	margin-bottom: 20px;
+}
+
+.list.column {
+	float: left;
+}
+
 li {
   list-style-type: none;
 }
+
+.map.column {
+	float: right;
+}
+
+/*----------------------------------*/
+/*----------FOOTER STYLES-----------*/
+/*----------------------------------*/
 
 footer {
 	position: absolute;

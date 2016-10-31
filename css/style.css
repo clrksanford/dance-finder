@@ -54,6 +54,10 @@ table {
 /*----------------------------------*/
 /*-------BEGIN CUSTOM STYLES--------*/
 /*----------------------------------*/
+.hidden {
+	display: none;
+}
+
 html {
 	height: 100%;
 }
@@ -61,7 +65,7 @@ html {
 body {
 	font-family: Arial, sans-serif;
 	height: 100%;
-	background: url('/images/contra.jpg');
+	background: url('../images/contra.jpg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -79,18 +83,20 @@ body:after {
 	height: 100%;
 }
 
-header {
+.title {
   padding: 20px;
 	position: absolute;
 	width: 100%;
 	background-color: rgba(0,0,0,0.5);
 }
 
-h3 {
+h3#title {
 	font-family: 'Lalezar', sans-serif;
 	font-size: 30px;
 	color: white;
-	z-index: 2;
+	margin-top: 6px;
+	cursor: pointer;
+	/*z-index: 2;*/
 }
 
 nav {
@@ -104,6 +110,10 @@ h1 {
   font-size: 100px;
   font-style: italic;
 	color: #ffd633;
+}
+
+h3#search-header {
+	display: none;
 }
 
 form {
@@ -125,10 +135,6 @@ button {
 
 button:hover {
 	background-color: rgb(255, 214, 51);
-}
-
-h2 {
-  visibility: hidden;
 }
 
 li {
