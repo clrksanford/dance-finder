@@ -17,7 +17,7 @@ function ajaxCall(query) {
   console.log('In the Ajax call');
 
   $.ajax({
-    url: "http://localhost:3000/results/" + query
+    url: "https://murmuring-tundra-73286.herokuapp.com/results/" + query
   })
     .done(function (response) {
 
