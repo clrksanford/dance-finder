@@ -13,15 +13,10 @@ $(document).ready(function () {
 });
 
 function ajaxCall(query) {
-
-  console.log('In the Ajax call');
-
   $.ajax({
-    url: "http://localhost:3000/results/" + query
+    url: "https://murmuring-tundra-73286.herokuapp.com/results/" + query
   })
     .done(function (response) {
-
-      console.log('Ajax response', response);
       // If h2's are invisible, show them
       $('h2').css('visibility', 'visible');
       $('.state').text(response[0].state);
