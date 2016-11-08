@@ -43,9 +43,9 @@ function ajaxCall(query) {
       }
 
       // Pull in corresponding map and append
-      var $map = $('<iframe />').attr('src', 'https://www.google.com/maps/d/embed?mid=1PXXhZmClA4JWm_J71Og5sYpfhIk&hl=en');
-
-      $('.map.column').append($map);
+      // var $map = $('<iframe />').attr('src', 'https://www.google.com/maps/d/embed?mid=1PXXhZmClA4JWm_J71Og5sYpfhIk&hl=en');
+      //
+      // $('.map.column').append($map);
     });
 }
 
