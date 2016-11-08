@@ -144,9 +144,12 @@ button:hover {
 /*----------------------------------*/
 
 main {
-	margin: 10% auto;
-	width: 90%;
-	min-height: 500px;
+	position: absolute;
+	padding: 8% 3% 0 3%;
+	top: 0;
+	left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .column {
