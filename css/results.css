@@ -54,6 +54,7 @@ table {
 /*----------------------------------*/
 /*-------BEGIN CUSTOM STYLES--------*/
 /*----------------------------------*/
+
 html {
 	height: 100%;
 }
@@ -173,10 +174,18 @@ main {
 
 li {
   list-style-type: none;
+	color: white;
+	text-align: left;
+	margin-bottom: 20px;
 }
 
 .map.column {
 	float: right;
+}
+
+iframe {
+	width: 95%;
+	height: 95%;
 }
 
 /*----------------------------------*/

@@ -13,21 +13,16 @@ $(document).ready(function () {
 });
 
 function ajaxCall(query) {
-
-  console.log('In the Ajax call');
-
   $.ajax({
     url: "https://murmuring-tundra-73286.herokuapp.com/results/" + query
   })
     .done(function (response) {
-
-      console.log('Ajax response', response);
       // If h2's are invisible, show them
       $('h2').css('visibility', 'visible');
       $('.state').text(response[0].state);
       $('ul').empty();
 
-
+      // Generate results and append to li
       for(var i=0; i < 5; i++) {
         var item = response[i];
         var series = item.series;
@@ -37,15 +32,20 @@ function ajaxCall(query) {
         var state = item.state;
 
         var resultsList = $('#upcoming');
-        var newLi = $('<li></li>');
+        var newLi = $('<li />');
         var h6 = $('<h6 />').text("Series: " + series);
-        var p1 = $('<p />').text("Date: " + date);
+        var p1 = $('<p />').text("Location: " + location + ", " + state);
         var p2 = $('<p />').text("Caller: " + caller);
-        var p3 = $('<p />').text("Location: " + location + ", " + state);
+        var p3 = $('<p />').text("Date: " + date);
 
         newLi.append(h6, p1, p2, p3);
         resultsList.append(newLi);
       }
+
+      // Pull in corresponding map and append
+      // var $map = $('<iframe />').attr('src', 'https://www.google.com/maps/d/embed?mid=1PXXhZmClA4JWm_J71Og5sYpfhIk&hl=en');
+      //
+      // $('.map.column').append($map);
     });
 }
 
