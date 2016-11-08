@@ -22,7 +22,7 @@ function ajaxCall(query) {
       $('.state').text(response[0].state);
       $('ul').empty();
 
-
+      // Generate results and append to li
       for(var i=0; i < 5; i++) {
         var item = response[i];
         var series = item.series;
@@ -41,6 +41,11 @@ function ajaxCall(query) {
         newLi.append(h6, p1, p2, p3);
         resultsList.append(newLi);
       }
+
+      // Pull in corresponding map and append
+      var $map = $('<iframe />').attr('src', 'https://www.google.com/maps/d/embed?mid=1PXXhZmClA4JWm_J71Og5sYpfhIk&hl=en');
+
+      $('.map.column').append($map);
     });
 }
 
