@@ -32,11 +32,11 @@ function ajaxCall(query) {
         var state = item.state;
 
         var resultsList = $('#upcoming');
-        var newLi = $('<li></li>');
+        var newLi = $('<li />');
         var h6 = $('<h6 />').text("Series: " + series);
-        var p1 = $('<p />').text("Date: " + date);
+        var p1 = $('<p />').text("Location: " + location + ", " + state);
         var p2 = $('<p />').text("Caller: " + caller);
-        var p3 = $('<p />').text("Location: " + location + ", " + state);
+        var p3 = $('<p />').text("Date: " + date);
 
         newLi.append(h6, p1, p2, p3);
         resultsList.append(newLi);
