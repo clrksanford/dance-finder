@@ -186,7 +186,7 @@ li {
 	float: right;
 }
 
-iframe {
+.map.column img {
 	width: 95%;
 	height: 95%;
 }
