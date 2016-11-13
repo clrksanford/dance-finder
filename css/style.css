@@ -83,36 +83,39 @@ body:after {
 	height: 100%;
 }
 
-main {
+/*----------------------------------*/
+/*----------HEADER STYLES-----------*/
+/*----------------------------------*/
+
+header {
 	position: absolute;
 	top: 0;
-	left: 0;
-  height: 100%;
-  width: 100%;
-	z-index: -1;
-}
-
-.title {
-  padding: 20px;
-	position: absolute;
-	width: 100%;
 	background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+	width: 100%;
+	z-index: 2;
 }
 
-h3#title {
+h3 {
 	font-family: 'Lalezar', sans-serif;
 	font-size: 30px;
 	color: white;
 	margin-top: 6px;
 	cursor: pointer;
-	/*z-index: 2;*/
+	display: inline-block;
+}
+
+h3#title {
+	float: left;
 }
 
 nav {
-  padding: 200px 0 100px 0;
-  text-align: center;
-	position: relative;
+  display: none;
 }
+
+/*----------------------------------*/
+/*----------SPLASH STYLES-----------*/
+/*----------------------------------*/
 
 h1 {
   font-family: 'Lobster', cursive;
@@ -121,16 +124,8 @@ h1 {
 	color: #ffd633;
 }
 
-h3#search-header {
-	display: none;
-}
-
-form {
+form#splashSearch {
 	margin: 50px auto;
-}
-
-select#search {
-	opacity: 0.5;
 }
 
 button {
@@ -146,20 +141,70 @@ button:hover {
 	background-color: rgb(255, 214, 51);
 }
 
+main#splashPage {
+	position: absolute;
+	top: 0;
+	left: 0;
+  height: 100%;
+  width: 100%;
+	padding: 200px 0 100px 0;
+  text-align: center;
+	z-index: 1;
+}
+
+/*----------------------------------*/
+/*----------RESULT STYLES-----------*/
+/*----------------------------------*/
+
+.column {
+	display: inline-block;
+	width: 48%;
+	height: 500px;
+	overflow: scroll;
+	background-color: rgba(0,0,0,0.8);
+	text-align: center;
+	padding: 40px 20px;
+	line-height: 1.25;
+}
+
+.column h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 28px;
+	font-style: italic;
+	color: white;
+	margin-bottom: 20px;
+}
+
+.list.column {
+	float: left;
+}
+
 li {
   list-style-type: none;
+	color: white;
+	text-align: left;
+	margin-bottom: 20px;
 }
+
+.map.column {
+	float: right;
+}
+
+.map.column img {
+	width: 95%;
+	height: 95%;
+}
+
+/*----------------------------------*/
+/*----------FOOTER STYLES-----------*/
+/*----------------------------------*/
 
 footer {
 	position: absolute;
 	padding: 20px;
 	bottom: 0;
 	width: 100%;
-	background-color: rgba(0,0,0);
 	text-align: center;
-}
-
-footer p {
 	font-family: Helvetica, sans-serif;
 	color: white;
 }

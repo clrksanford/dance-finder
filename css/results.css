@@ -84,13 +84,12 @@ body:after {
 /*----------HEADER STYLES-----------*/
 /*----------------------------------*/
 
-header {
+/*header {
 	position: absolute;
 	top: 0;
 	background-color: rgba(0,0,0,0.5);
   padding: 20px;
 	width: 100%;
-
 }
 
 h3 {
@@ -105,19 +104,20 @@ h3#title {
 	float: left;
 	margin-top: 6px;
 	cursor: pointer;
-}
+}*/
 
+/*TODO This will be added by jQuery*/
 nav {
 	display: inline-block;
 	float: right;
   text-align: center;
 }
 
-nav h3#search-header {
+/*nav h3#search-header {
 	display: inline-block;
 	margin-top: 6px;
 	margin-right: 20px;
-}
+}*/
 
 nav form {
 	display: inline-block;
@@ -143,6 +143,7 @@ button:hover {
 /*-----------MAIN STYLES------------*/
 /*----------------------------------*/
 
+/*TODO this needs to be added with jQuery*/
 main {
 	position: absolute;
 	padding: 8% 3% 0 3%;
