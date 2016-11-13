@@ -109,8 +109,10 @@ h3#title {
 	float: left;
 }
 
-nav {
+nav, nav form {
   display: none;
+	float: right;
+	text-align: center;
 }
 
 /*----------------------------------*/
@@ -155,6 +157,16 @@ main#splashPage {
 /*----------------------------------*/
 /*----------RESULT STYLES-----------*/
 /*----------------------------------*/
+
+main#resultsPage {
+	display: none;
+	position: absolute;
+	padding: 8% 3% 0 3%;
+	top: 0;
+	left: 0;
+  height: 100%;
+  width: 100%;
+}
 
 .column {
 	display: inline-block;

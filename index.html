@@ -15,8 +15,8 @@
       </div>
       <nav>
         <h3>Find another dance:</h3>
-        <form id="resultSearch">
-          <select class="selectpicker">
+        <form>
+          <select class="selectpicker headerSearch">
             <option value="default">Choose your state</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -69,15 +69,15 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select>
-          <button class="find">Find!</button>
+          <button class="getResultsButton headerSearch">Find!</button>
         </form>
       </nav>
     </header>
 
     <main id="splashPage">
       <h1>Where do you want to dance?</h1>
-      <form id="splashSearch">
-        <select class="selectpicker" >
+      <form>
+        <select class="selectpicker splashSearch">
           <option value="default">Choose your state</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
@@ -130,20 +130,20 @@
           <option value="WI">Wisconsin</option>
           <option value="WY">Wyoming</option>
         </select>
-        <button class="find">Find!</button>
+        <button class="getResultsButton splashSearch">Find!</button>
       </form>
     </main>
 
-    <main class="container hidden" id="results">
+    <main class="container" id="resultsPage">
       <div class="row">
         <div class="list column">
           <h2>Upcoming Dances in <span class="state">STATE</span></h2>
-          <ul id="upcoming">
+          <ul id="upcoming" class="resultsList">
           </ul>
 
           <!-- COMMENTED OUT UNTIL RECURRING DANCES CAN BE IMPLEMENTED -->
           <!-- <h2>Recurring Dance Series in <span class="state">STATE</span></h2>
-          <ul id="recurring">
+          <ul id="recurring" class="resultsList">
           </ul> -->
         </div>
         <div class="map column">

@@ -144,7 +144,7 @@ button:hover {
 /*----------------------------------*/
 
 /*TODO this needs to be added with jQuery*/
-main {
+main#resultsPage {
 	position: absolute;
 	padding: 8% 3% 0 3%;
 	top: 0;
